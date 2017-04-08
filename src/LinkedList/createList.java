@@ -31,8 +31,11 @@ public class createList {
 		display(head);
 		//System.out.println("length of List is ");
 		length(head);
-		addFirst(head, 99);
+		head = addFirst(head, 99);
 		addLast(head, 100);
+		addGivenNode(second, 1000);
+		display(head);
+
 	}
 	
 	
@@ -61,12 +64,13 @@ public class createList {
 		System.out.println("Length of LinkedList " + ctr);
 	}
 	
-	static void addFirst(ListNode head, int num){
+	static ListNode addFirst(ListNode head, int num){
 		ListNode add = new ListNode(num);
 		add.next = head;
 		head = add;
 		display(add);
 		length(add);
+		return head;
 	}
 	
 	static void addLast(ListNode head, int num){
@@ -81,6 +85,13 @@ public class createList {
 		tail = add;
 		display(head);
 		length(head);
+	}
+	
+	static void addGivenNode(ListNode node, int num){
+		ListNode add = new ListNode(num);
+		add.next = node.next;
+		node.next = add;
+
 	}
 
 }
