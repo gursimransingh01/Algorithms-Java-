@@ -35,6 +35,9 @@ public class createList {
 		addLast(head, 100);
 		addGivenNode(second, 1000);
 		display(head);
+		deleteLast(head);
+		System.out.println("last node deleted");
+		display(head);
 
 	}
 	
@@ -92,6 +95,18 @@ public class createList {
 		add.next = node.next;
 		node.next = add;
 
+	}
+	
+	static void deleteLast(ListNode head){
+
+		ListNode p = head;
+		ListNode previous = null;
+		while(p.next != null){
+			previous = p;
+			p = p.next;
+		}
+		previous.next = null;
+		
 	}
 
 }
