@@ -27,8 +27,10 @@ public class createList {
 		second.next = third;
 		third.next = tail;
 		tail.next = null;
-		
+		System.out.println("List is : ");
 		display(head);
+		//System.out.println("length of List is ");
+		length(head);
 	}
 	
 	
@@ -43,6 +45,18 @@ public class createList {
 			current = current.next;
 		}
 
+	}
+	
+	static void length(ListNode head){
+		//length of LinkedList
+		
+		int ctr=0;
+		ListNode current = head;
+		while(current != null){
+			ctr = ctr+1;
+			current = current.next;
+		}
+		System.out.println("Length of LinkedList " + ctr);
 	}
 
 }
